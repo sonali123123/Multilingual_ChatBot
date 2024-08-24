@@ -6,13 +6,9 @@
 3. [Technologies Used](#technologies-used)
 4. [Installation](#installation)
 5. [Usage](#usage)
-6. [Project Structure](#project-structure)
-7. [How It Works](#how-it-works)
-8. [Configuration](#configuration)
-9. [API Reference](#api-reference)
-10. [Contributing](#contributing)
-11. [License](#license)
-12. [Contact](#contact)
+6. [How It Works](#how-it-works)
+7. [Contributing](#contributing)
+
 
 
 
@@ -22,7 +18,7 @@ The Multilingual Chatbot is an advanced natural language processing (NLP) applic
 
 ## Features
 
-- Support for multiple languages (list supported languages)
+- Support for multiple languages(English, Hindi, Tamil, Telugu)
 - Real-time language detection
 - Automatic translation of user input and chatbot responses
 - Context-aware conversations
@@ -39,7 +35,7 @@ The Multilingual Chatbot is an advanced natural language processing (NLP) applic
 - Flask (for web API)
 - SQLite or PostgreSQL (for data storage)
 - Google Cloud Translation API (for translation services)
-- Docker (for containerization)
+
 
 
 ## Installation
@@ -50,11 +46,8 @@ The Multilingual Chatbot is an advanced natural language processing (NLP) applic
    
 3. Install the required dependencies:   pip install -r requirements.txt
 
-4. Set up environment variables:    cp .env.example .env
+4. Set up environment variables:    OPENAI_API_KEY in .env file
 
-Edit the `.env` file with your specific configuration.
-
-5. Initialize the database:   python scripts/init_db.py
 
 
 ## Usage
@@ -64,9 +57,6 @@ Edit the `.env` file with your specific configuration.
 
 2. Access the chatbot through the web interface at `http://localhost:5000` or integrate it with your application using the provided API endpoints.
 
-## Project Structure
-
-multilingual-chatbot/ ├── app.py ├── config.py ├── requirements.txt ├── .env ├── .gitignore ├── README.md ├── LICENSE ├── tests/ │ ├── test_language_detection.py │ ├── test_translation.py │ └── test_chatbot_responses.py ├── src/ │ ├── language_detection/ │ ├── translation/ │ ├── nlp_processing/ │ ├── response_generation/ │ ├── data_storage/ │ └── api/ ├── models/ │ ├── intent_classification/ │ └── named_entity_recognition/ ├── data/ │ ├── training_data/ │ └── conversation_logs/ └── scripts/ ├── train_models.py └── init_db.py
 
 
 ## How It Works
@@ -79,28 +69,7 @@ multilingual-chatbot/ ├── app.py ├── config.py ├── requirement
 6. The response is translated back to the user's language if needed.
 7. The final response is sent back to the user.
 
-## Configuration
 
-The chatbot can be configured using the `.env` file. Key configuration options include:
-
-- `SUPPORTED_LANGUAGES`: List of ISO 639-1 language codes
-- `DEFAULT_LANGUAGE`: Default language for the chatbot
-- `TRANSLATION_API_KEY`: API key for the translation service
-- `DATABASE_URL`: Connection string for the database
-- `LOG_LEVEL`: Logging level (e.g., DEBUG, INFO, WARNING)
-
-## API Reference
-
-The chatbot exposes the following API endpoints:
-
-- `POST /api/chat`: Send a message to the chatbot
-  - Request body: `{"message": "Hello", "language": "en"}`
-  - Response: `{"response": "Hi there! How can I help you today?"}`
-
-- `GET /api/languages`: Get list of supported languages
-  - Response: `{"languages": ["en", "es", "fr", "de", ...]}`
-
-For detailed API documentation, refer to the `API.md` file.
 
 ## Contributing
 
